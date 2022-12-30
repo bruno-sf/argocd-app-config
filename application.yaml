@@ -16,8 +16,8 @@ spec:
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
+    - CreateNamespace=true  # Not default behavior, should create the namespace in the dest cluster
 
     automated:
-      selfHeal: true
-      prune: true
+      selfHeal: true        # By default will not triggers automated sync, polling git rep every 3m, for faster syncs use a git webook to notify argo
+      prune: true           # By default automatic sync will not delete resources
